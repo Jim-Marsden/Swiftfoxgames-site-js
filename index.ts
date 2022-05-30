@@ -10,6 +10,7 @@ app.set('view engine', 'pug');
 // [Directory Setup] ========================================== [Directory Setup]
 app.use(express.static('wasm'));
 app.use(express.static('wasm/helpers'))
+app.use(express.static('Media'))
 
 // [Page Routing] ================================================ [Page Routing]
 app.get('/', index_page);

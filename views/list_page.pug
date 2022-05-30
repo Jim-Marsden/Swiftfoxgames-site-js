@@ -1,0 +1,9 @@
+extends main_template
+block content
+    if list_page_header !== ''
+        h1 #{list_page_header}
+    each person in list_data
+        H3 #{person.point_name} #{person.point_message}
+        ul
+            each element in person.data
+                li #{element.name} #{sep} #{element.status}

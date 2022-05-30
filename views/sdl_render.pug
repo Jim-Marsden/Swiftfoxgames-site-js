@@ -1,0 +1,31 @@
+extends main_template
+block content
+
+    div(id='canvas_message') So we're working on
+
+    canvas(id='canvas' oncontextmenu="event.preventDefault()") loading...
+
+    script(type="text/javascript").
+        function resize_canvas(){
+            canvas = document.getElementById("canvas");
+            if (canvas.width < window.innerWidth) {
+                canvas.width = window.innerWidth;
+            }
+
+            if (canvas.height < window.innerHeight) {
+                canvas.height = window.innerHeight;
+            }
+        }
+        addEventListener('resize', resize_canvas);
+
+
+    script.
+        window.Module = {
+            canvas: document.getElementById('canvas'),
+            print: console.log,
+            printErr: console.error,
+        };
+
+
+
+    script( async src="chess_wasm.js")

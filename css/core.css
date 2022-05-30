@@ -1,0 +1,142 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: #061C30 ;
+    color:#FFEA6A      ;
+    font-family: 'Press Start 2P', cursive;
+}
+
+a{
+    color: #FFEA6A;
+}
+
+h1{
+    align-self: center;
+    align-content: center;
+}
+
+#header_link_div{
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+}
+
+a.header_link{
+    vertical-align: center;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-decoration: none;
+    color: #FFEA6A;
+    /*border: 10px solid #061C30;*/
+    border: 10px solid #666666;
+    background-color:  #666666;
+}
+
+a.header_link:hover {
+    border: 10px solid #FFEA6A;
+
+    background-color: #FFEA6A;
+    color:  #666666;
+}
+
+#content {
+    background-color: #e3f2fd;
+    flex: 1;
+    padding: 20px;
+}
+#header{
+    font-family: 'Press Start 2P', cursive;
+
+    position:absolute;
+    top: 0;
+
+    left:  0;
+    width:95%;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* height:60px;  Height of the footer */
+    background:#08233D;
+
+
+}
+
+#canvas{
+    font-family: 'Press Start 2P', cursive;
+
+    position:relative;
+    top: 50px;
+    left:  0;
+    width:90%;
+    padding-top: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#content_body{
+    font-family: 'Press Start 2P', cursive;
+
+    position:relative;
+    top: 50px;
+    left:  0;
+    width:95%;
+    padding-top: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    background:#08233D;
+}
+
+#footer {
+    font-family: 'Press Start 2P', cursive;
+
+    position:absolute;
+    bottom:0;
+    left:  0;
+    width:95%;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* height:60px;  Height of the footer */
+    background:#08233D;
+
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+
+    /* Direction of the items, can be row or column */
+    flex-direction: column;
+    width: 75%;
+    align-content: center;
+    align-self: center;
+}
+
+header,
+footer {
+    height: 100px;
+    align-content: center;
+
+}
+
+main {
+    background:#08233D;
+
+    flex: 1;
+
+}
+
+#title_image {
+    width: 75px;
+}
+
+#title_image_text{
+    height: 100px;
+    align-content: center;
+    align-self: center;
+    border: 5px transparent;
+}

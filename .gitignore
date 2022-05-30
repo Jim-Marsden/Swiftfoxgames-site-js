@@ -1,0 +1,5 @@
+# Project exclude paths
+/node_modules/
+/index.js
+/page_data.js
+/pages.js

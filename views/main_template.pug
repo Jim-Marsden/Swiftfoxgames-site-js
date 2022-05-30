@@ -1,0 +1,19 @@
+doctype html
+html
+    link(href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet")
+    link(rel= "stylesheet" type= "text/css" href=css_data)
+    head
+        title #{title} - Swiftfox Kit
+    body
+        div(class="wrapper")
+            header
+                div(id='header_link_div')
+                    img(id="title_image" src="/swiftfoxv1.png")
+                    a(class="header_link" href="/index") Home
+                    a(class="header_link" href="/about") About
+                    a(class="header_link" href="/try_it") Try it!
+                    a(class="header_link" href="/thanks") Gratitude
+            main
+                block content
+            footer #{footer}
+

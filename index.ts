@@ -60,4 +60,4 @@ function main(): number {
     return EXIT_SUCCESS;
 }
 
-main();
+console.log(`Program exited with code: ${main()}`);

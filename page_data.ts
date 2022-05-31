@@ -4,7 +4,6 @@
 * just extension the composition.
 * */
 
-
 export class main_template{
     css_data: string;
     page: string;

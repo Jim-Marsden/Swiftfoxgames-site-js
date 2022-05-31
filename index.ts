@@ -1,4 +1,4 @@
-import * as express from "express";
+import express from "express";
 import {index} from "./page_data";
 import {about_page, index_page, thanks_page, try_it_page} from "./pages";
 const app = express();
@@ -19,27 +19,45 @@ app.get('/try_it', try_it_page);
 app.get('/about', about_page);
 app.get('/thanks', thanks_page);
 
-app.get('/exit', (req: express.request, res: express.response) => {
+app.get('/exit', (req: any, res: any) => {
     res.redirect('http://example.com/');
 });
 
 
 // [File Routing] ================================================ [File Routing]
 
-app.get('/core.css', (req: express.request, res: express.response) => {
+app.get('/core.css', (req, res) => {
     res.sendFile(__dirname + '/css/core.css');
 });
 
-app.get('/chess.wasm', (req: express.request, res: express.response) => {
+app.get('/chess.wasm', (req, res) => {
     res.sendFile(__dirname + '/wasm/chess_wasm.wasm');
 });
 
-app.get('/chess', (req: express.request, res: express.response) => {
+app.get('/chess', (req , res) => {
     res.render('sdl_render', new index());
 });
-app.get('/sdl', (req: express.request, res: express.response) => {
+app.get('/sdl', (req, res) => {
     res.render('sdl_render', new index());
 });
 
 // [App Run] ========================================================== [App Run]
-app.listen(8080);
+
+
+function main(): number {
+    const EXIT_SUCCESS = 0;
+    const EXIT_FAILURE = -1;
+    const port = 3000;
+    try {
+        app.listen(port, () => {
+            console.log(`listening on port: ${port}`)
+        })
+    }
+    catch (e) {
+        console.log(e);
+        return EXIT_FAILURE;
+    }
+    return EXIT_SUCCESS;
+}
+
+main();

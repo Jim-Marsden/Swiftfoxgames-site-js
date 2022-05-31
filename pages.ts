@@ -7,11 +7,13 @@ import {index, list_page, list_page_data, main_template} from "./page_data";
 import * as express from "express";
 
 export function index_page(req: express.Request , res: express.Response) {
+    console.log(req);
     const to_render = new index();
     res.render(to_render.page, to_render);
 }
 
 export function try_it_page(req: express.Request , res: express.Response) {
+    console.log(req);
     const to_render =  new main_template('Try it!',
         `We're actively working on something neato!
         We'll hopefully let you play our games online in your browser soon!`);
@@ -19,6 +21,7 @@ export function try_it_page(req: express.Request , res: express.Response) {
 }
 
 export function about_page(req: express.Request , res: express.Response) {
+    console.log(req);
     const list_page_content = new list_page([
         new list_page_data('Our team:',
             '', [
@@ -39,7 +42,7 @@ export function about_page(req: express.Request , res: express.Response) {
 }
 
 export function thanks_page(req: express.Request , res: express.Response) {
-    console.log(':c');
+    console.log(req);
 
     const list_page_content = new list_page([
         new list_page_data('Jim',

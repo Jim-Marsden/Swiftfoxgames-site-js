@@ -1,6 +1,6 @@
 import express from "express";
 import {index} from "./page_data";
-import {about_page, index_page, thanks_page, try_it_page} from "./pages";
+import {about_page, index_page, index_page2, thanks_page, try_it_page} from "./pages";
 const app = express();
 
 // [Express Setup] ============================================= [Express Setup]
@@ -18,8 +18,12 @@ app.get('/index', index_page);
 app.get('/try_it', try_it_page);
 app.get('/about', about_page);
 app.get('/thanks', thanks_page);
+app.get('/cpu',  (req:any, res:any) => {
+    index_page2(req, res);
+});
 
-app.get('/exit', (req: any, res: any) => {
+
+app.get('/exit', (req: express.Request , res: express.Response) => {
     res.redirect('http://example.com/');
 });
 
@@ -37,7 +41,7 @@ app.get('/chess.wasm', (req, res) => {
 app.get('/chess', (req , res) => {
     res.render('sdl_render', new index());
 });
-app.get('/sdl', (req, res) => {
+app.get('/smk', (req, res) => {
     res.render('sdl_render', new index());
 });
 

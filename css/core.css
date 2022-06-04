@@ -73,9 +73,13 @@ a.header_link:hover {
     top: 50px;
     left:  0;
     width:90%;
+    height: 90%;
+
     padding-top: 45px;
     padding-left: 20px;
     padding-right: 20px;
+
+
 }
 #content_body{
     font-family: 'Press Start 2P', cursive;

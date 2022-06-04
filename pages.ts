@@ -5,15 +5,20 @@
 
 import {index, list_page, list_page_data, main_template} from "./page_data";
 import * as express from "express";
+import * as os from "os";
 
+export function index_page2(req: express.Request , res: express.Response) {
+    let cpu_status:string;
+    cpu_status = os.loadavg()[0].toString();
+    const to_render = new main_template('server status', `${cpu_status}`);
+    res.render(to_render.page, to_render);
+}
 export function index_page(req: express.Request , res: express.Response) {
-    console.log(req);
     const to_render = new index();
     res.render(to_render.page, to_render);
 }
 
 export function try_it_page(req: express.Request , res: express.Response) {
-    console.log(req);
     const to_render =  new main_template('Try it!',
         `We're actively working on something neato!
         We'll hopefully let you play our games online in your browser soon!`);
@@ -37,7 +42,6 @@ export function about_page(req: express.Request , res: express.Response) {
                     status: "A project that we're going to be putting together soon mostly to test features and the ablility to host our games online"
                 }])
     ]);
-    console.log(req);
     res.render(list_page_content.page, list_page_content);
 }
 

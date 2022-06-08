@@ -1,0 +1,34 @@
+doctype html
+html
+    head
+        //link(href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet")
+        //link(rel= "stylesheet" type= "text/css" href=css_data)
+        style html, body {margin: 0 !important; padding: 0 !important;}
+        title smk
+    body
+        canvas(id='canvas' oncontextmenu="event.preventDefault()") loading...
+
+        //script(type="text/javascript").
+        //    function resize_canvas(){
+        //        canvas = document.getElementById("canvas");
+        //        if (canvas.width < window.innerWidth) {
+        //            canvas.width = window.innerWidth;
+        //        }
+        //
+        //        if (canvas.height < window.innerHeight) {
+        //            canvas.height = window.innerHeight;
+        //        }
+        //    }
+        //    addEventListener('resize', resize_canvas);
+
+
+        script.
+            window.Module = {
+                canvas: document.getElementById('canvas'),
+                print: console.log,
+                printErr: console.error,
+            };
+
+
+
+    script( async src="chess_wasm.js")

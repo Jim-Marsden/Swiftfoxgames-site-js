@@ -45,6 +45,10 @@ app.get('/smk', (req, res) => {
     res.render('sdl_render', new index());
 });
 
+app.get('/wasm', (req, res)=>{
+    res.render('smk_render');
+})
+
 // [App Run] ========================================================== [App Run]
 
 
